@@ -43,9 +43,7 @@
     this.total = 0.00;
 
     this.addProduct = (product) => {
-
       const indexOfProduct = this.basket.map(value => value.name).indexOf(product.name);
-
       if( indexOfProduct === -1 ) {
         this.basketObj = Object.assign({}, product);
         this.basketObj.quantity = 1;
@@ -54,7 +52,6 @@
       else {
         this.basket[indexOfProduct].quantity++;
       }
-
       this.subtotal += this.basketObj.price;
       this.tax = parseFloat(this.subtotal) * 0.0875;
       this.total = parseFloat(this.subtotal) + parseFloat(this.tax);
