@@ -2,3 +2,12 @@ img {
   width: 25%;
   height: 25%;
 }
+
+.camera-place {
+  border: 2px solid black;
+  width: 60%;
+}
+
+.cart-item {
+  border: 2px solid black;
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html ng-app="FamilyApp">
+  <head>
+    <meta charset="utf-8">
+    <title>Family Tree Tracker</title>
+  </head>
+  <body>
+    <div ng-controller="RoleController">
+      <p>{{ allRoles }}</p>
+    </div>
+    <div ng-controller="FamilyController as family">
+      <h2>Family Stuff ({{family.people.length}})</h2>
+      <ul ng-repeat="person in family.people">
+        <li>
+          {{ person.name }} - {{ person.role }}
+        </li>
+      </ul>
+      <div>
+        <label>Name
+          <input type="text" name="name" ng-model="family.person.name">
+        </label>
+        <label>Role
+          <input type="text" name="role" ng-model="family.person.role">
+        </label>
+        <button ng-click="family.createPerson()">Add</button>
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+    <script src="./app.js"></script>
+    <script src="./controllers.js"></script>
+    <script src="../js/jquery-2.1.4.min.js"></script>
+  </body>
+</html>
